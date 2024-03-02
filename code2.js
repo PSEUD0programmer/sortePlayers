@@ -58,13 +58,21 @@ let playerList = [
 ];
 
 let playerListWindow = document.querySelector('.playerList');
+let addPlayerList = document.querySelector('.addPlayerList');
 let btnSortTrigger = document.querySelector('.raisingDownBtn');
 let btnName = document.querySelector('.nameBtn');
 let btnLvl = document.querySelector('.lvlBtn');
 let btnScope = document.querySelector('.scopeBtn');
 let btnOnline = document.querySelector('.onlineBtn');
+let btnAddPlayer = document.querySelector('.addPlayer');
+let btnAdd = document.querySelector('.ok');
 
 let roleSelect = document.querySelector('.roleSelect');
+
+let profileName = document.querySelector('.nameInput');
+let profileLvl = document.querySelector('.lvlInput');
+let profileScope = document.querySelector('.scopeInput');
+let profileOnline = document.querySelector('.isOnline');
 
 let roleName = 'Игрок';
 let sortTrigger = false;
@@ -81,6 +89,17 @@ btnSortTrigger.onclick = function () {
 
 }
 
+
+btnAdd.onclick = function () {
+    if (profileName.value === '' || profileLvl.value === '' || profileScope.value === '')
+        return;
+    addPlayer();
+    addPlayerList.style.visibility = 'hidden';
+}
+
+btnAddPlayer.onclick = function () {
+    addPlayerList.style.visibility = 'visible';
+}
 btnName.onclick = function () {
     getSorteArray(playerList, 'name');
 }
@@ -97,7 +116,7 @@ btnOnline.onclick = function () {
     getSorteArray(playerList, 'online');
 }
 
-roleSelect.onchange  = function () {
+roleSelect.onchange = function () {
     console.log(1)
     if (roleSelect.options[roleSelect.selectedIndex].value == 'moder') {
         roleName = 'Модератор';
@@ -210,7 +229,21 @@ function sorteKey(arr, key) {
 }
 
 function addPlayer() {
-    
+    let profile = {
+        name: profileName.value,
+        level: profileLvl.value,
+        scope: profileScope.value,
+        role: 'Игрок',
+        online: profileOnline.checked,
+        days: 12,
+        banStatus: {
+            ban: false,
+            time: 0,
+            reason: ''
+        },
+        stikers: ['defult']
+    }
+    playerList.push(profile);
 }
 
 //Вывод в консоль
@@ -224,7 +257,7 @@ function displayArr(arr) {
             roleIcon = '<img src="moder.svg" color = "white" alt="role"></img>';
             moderClass = true;
         }
-        else{
+        else {
             roleIcon = '<img src="user.svg" alt="role"></img>';
             moderClass = false
         }
@@ -238,7 +271,7 @@ function displayArr(arr) {
         listItem.classList.add('list');
         if (moderClass === true)
             listItem.classList.add('moder');
-        
+
         listItem.innerHTML = `
     <span class="index">${`${i + 1})`}</span>
     <span class="name">${arr[i].name}</span>
