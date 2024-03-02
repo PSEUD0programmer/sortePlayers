@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: lightblue;
+    width: 80vh;
+    max-width: 1000px;
+    min-width: 600px;
+    margin: 30px auto;
+}
+
+header {
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px 30px;
+    max-width: 1000px;
+
+    display: flex;
+    gap: 10px;
+    box-shadow: 4px 4px 8px 0px rgba(80, 34, 34, 0.5);
+}
+
+main{
+    max-width: 1000px;
+    margin-top: 20px;
+    height: 70vb;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px 30px;
+    box-shadow: 4px 4px 8px 0px rgba(80, 34, 34, 0.5);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(144, 238, 144);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px 0px rgba(141, 61, 61, 0.5);
+
+}
+
+.roleSelect {
+    margin-left: 50px;
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px 0px rgba(80, 34, 34, 0.4);
+}
+
+.active {
+    background-color: brown;
+}
+
+.btn:active {
+    opacity: 40%;
+}
+
+.addPlayer {
+    width: 100px;
+    align-self: center;
+}
+
+.playerList {
+    height: 80%;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    overflow-y: scroll;
+    background-color: rgb(144, 238, 144);
+    box-shadow: 4px 4px 8px 0px rgba(80, 34, 34, 0.2) inset;
+}
+
+.list {
+    padding: 5px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: .3s;
+}
+
+.list:hover {
+    transform: scale(1.02);
+}
+
+.list:nth-child(1) {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.list:nth-child(2) {
+    background-color: rgba(255, 255, 255, .7);
+}
+
+.list:nth-child(3) {
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.role {
+    width: 30px;
+}
+
+.index {
+    width: 70px;
+}
+
+.name {
+    width: 150px;
+}
+
+.level,
+.scope {
+    width: 80px;
+    text-align: right;
+}
+
+.online {
+    width: 20px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.list.moder {
+    background-color: rgba(165, 42, 42, .7);
+    color: white;
+}
+
+.addPlayerList {
+    visibility: hidden;
+    max-width: 1000px;
+    margin-top: 20px;
+    height: 70vb;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px 30px;
+    box-shadow: 4px 4px 8px 0px rgba(80, 34, 34, 0.5);
+
+
+    align-self: center;
+    position: absolute;
+    height: 300px;
+}

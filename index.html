@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <button class="btn raisingDownBtn">⇅</button>
+        <button class="btn nameBtn">Æ</button>
+        <button class="btn lvlBtn">LVL</button>
+        <button class="btn scopeBtn">SCOPE</button>
+        <button class="btn onlineBtn">ONLINE</button>
+
+        <select class="roleSelect">
+            <option value="user">Пользователь</option>
+            <option value="moder">Модератор</option>
+        </select>
+
+        
+    </header>
+    <main>
+        <ul class="playerList">
+                       
+        </ul>
+        <button class="btn addPlayer">Добавить</button>
+
+        <section class="addPlayerList">
+            <p>В имени должно быть не больше 15 символов кириллицы</p>
+            <input type="text" id="nameInput" placeholder="Введите ваше имя">
+            <p>Модератор?</p>
+            <input type="checkbox" id="isModer">
+            <input type="text" id="lvlInput" placeholder="Уровень">
+            <input type="text" id="scopeInput" placeholder="Кол-во очков">
+            <p>В сети?</p>
+            <input type="checkbox" id="isOnline">
+        </section>
+        
+    </main>
+
+    
+
+    <script src="code2.js"></script>
+</body>
+</html>
